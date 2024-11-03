@@ -249,3 +249,39 @@ Although there are some datasets available for the development of security apps
 in iomt, there are important features not addressed in the current
 state-of-the-art contributions. for example operational diversity is a critical
 aspect to consider to mimic a realistic iomt environment.
+
+To mimic a healthcare iomt infrastructure, a topology needs rely on the use of
+multiple services that would naturally adopt different protocols (Wi-Fi,
+Bluetooth, and MQTT).
+
+The CICIoMT2024 brings a novel processing pipeline that enables data processing
+for multiple protocols.
+
+The main contributions of this research are:
++ **Development of a Comprehensive IoMT Security Dataset:** includes 18
+different cyberattacks against a diverse set of 40 IoMT devs, Also this contains
+research protocols namely Wi-Fi, MQTT, and Bluetooth protocols.
++ **Innovative methodology in iomt attack simulation and data collection:** A
+novel systematic approach to simulating and capturing iomt network traffic under
+various cyberattack scenarios. Considering the complex network of healthcare
+including DDoS, DoS, Recon, MQTT, and spoofing, using a combination of real and
+simulated devices. They provide advance network monitoring techniques and
+specialized hardware, such as network taps, ensure the high fidelity of data
+collection (Fidelity in the context of data science refers to the accuracy and
+precision of data representations and analyses. It is a critical concept that
+determines how closely a model or dataset reflects the real-world phenomena it
+aims to represent
+[refs](https://statisticseasily.com/glossario/what-is-fidelity-in-data-science-explained/)).
++ **Profiling iomt device lifecycle for enhanced security understanding:** This
+research captures the lifecycle of these devices in different vital phases of a
+device from the moment they join the network until they leave. As mobility in
+healthcare organizations is considered a regular practice, profiling the
+lifecycle while encompassing various operational phases like power interaction,
+idle, active and interaction states becomes very important. by this research we
+will learn understanding of the devices behavioral patterns by meticulously
+capturing and analyzing the behavior of IoMT devices from the moment they join
+the network. this research critical in identifying and mitigating potential
+security vulnerabilities.
++ Multi-dimensional Evaluation: This study not only benchmarks the current state
+of ML in IoMT security but also opens avenues for future exploration in
+algorithm optimization and feature engineering.
