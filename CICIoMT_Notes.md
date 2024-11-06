@@ -285,3 +285,35 @@ security vulnerabilities.
 + Multi-dimensional Evaluation: This study not only benchmarks the current state
 of ML in IoMT security but also opens avenues for future exploration in
 algorithm optimization and feature engineering.
+
+**IoMT plays a critical role in medication management, wellness tracking, and
+alert systems.**
+
+IoMT enables remote care, personalized treatments, and preventive measures.
+
+New applications are begin developed using IoMT devices in healthcare. These
+solutions aim to improve the medical practice by offering comfort, remote care,
+higher accuracy, and interconnection.
+
+Many datasets compared with CICIoMT datasets such as:
+
++ ECU-IoHT dataset to demonstrate the exploitation of IoT devices in a
+healthcare env. An analysis of attack behavior is conducted to support the
+development of new security solutions comprising many real devices (MySignals,
+temp sensor, BP sensor, HR sensor, Bluetooth and wireless adapter, Kali, and
+Windows Laptop). Concerning the attacks launched, the authors focus on scaling,
+ARP Spoofing, DoS, Smart, and injection.
+
+```bib
+@article{ahmed2021ecu,
+  title={ECU-IoHT: A dataset for analyzing cyberattacks in Internet of Health Things},
+  author={Ahmed, Mohiuddin and Byreddy, Surender and Nutakki, Anush and Sikos, Leslie F and Haskell-Dowland, Paul},
+  journal={Ad Hoc Networks},
+  volume={122},
+  pages={102621},
+  year={2021},
+  publisher={Elsevier}
+}
+```
+
++ In another study authors introduce a dataset focused on how attacks are executed against IoMT topologies with a special focus on Bluetooth. 
