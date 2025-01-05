@@ -316,4 +316,81 @@ ARP Spoofing, DoS, Smart, and injection.
 }
 ```
 
-+ In another study authors introduce a dataset focused on how attacks are executed against IoMT topologies with a special focus on Bluetooth. 
++ In another study authors introduce a dataset focused on how attacks are
+  executed against IoMT topologies with a special focus on Bluetooth. 
+
+The authors in [zubair2022secure] introduce a dataset focused on how attacks are executed
+against IoMT topologies with a special focus on Bluetooth. An important
+discussion on the technical aspects of this protocol is presented alongside its
+applicability to the healthcare context. Multiple devices are used, and several
+attacks are launched, followed by an in-depth ML analysis considering the
+evaluation of multiple algorithms (e.g., Support Vector Machine, K-Means, and
+Deep Neural Networks).
+
+```bib
+@article{zubair2022secure,
+  title={Secure Bluetooth communication in smart healthcare systems: a novel community dataset and intrusion detection system},
+  author={Zubair, Mohammed and Ghubaish, Ali and Unal, Devrim and Al-Ali, Abdulla and Reimann, Thomas and Alinier, Guillaume and Hammoudeh, Mohammad and Qadir, Junaid},
+  journal={Sensors},
+  volume={22},
+  number={21},
+  pages={8280},
+  year={2022},
+  publisher={MDPI}
+}
+```
+
+Hussain et al. [hussain2021framework] introduce a data generation method to
+support the design of IoT security solutions focused on healthcare.  This
+method, named IoTFlock, enables the generation of both normal and malicious
+network traffic. The dataset proposed adopted many IoMT devices and resulted
+from the network traffic captured during. Several types of attacks can target
+the MQTT protocol.  These attacks include Distributed Denial of Service (DDoS),
+brute force, SlowITE, and MQTT publish flood attacks.
+
+```bib
+@article{hussain2021framework,
+  title={A framework for malicious traffic detection in IoT healthcare environment},
+  author={Hussain, Faisal and Abbas, Syed Ghazanfar and Shah, Ghalib A and Pires, Ivan Miguel and Fayyaz, Ubaid U and Shahzad, Farrukh and Garcia, Nuno M and Zdravevski, Eftim},
+  journal={Sensors},
+  volume={21},
+  number={9},
+  pages={3025},
+  year={2021},
+  publisher={MDPI}
+}
+```
+
+NOTE: Moreover, other IoT security datasets are not necessarily focused on
+healthcare applications.
+
+Note from CIC IoT Lab:
+
+Establishing an IoT lab with several devices is difficult for many reasons. Such
+devices require supporting network devices (e.g., routers, access points, and
+switches) to connect and a team capable of setting up all the configurations
+needed. Furthermore, purchasing these devices at scale requires planning and
+financial investments that are not readily available. The Canadian Institute for
+Cybersecurity (CIC) has invested in establishing a well-equipped IoT lab. This
+investment comprises the acquisition of tens of IoT devices for multiple
+purposes (e.g., healthcare devices, home automation devices, and next-generation
+devices), several supporting network systems (e.g., routers, switches, access
+points, servers, adapters, sniffers, and networks taps), IoT kits (e.g., Arduino
+and Raspberry Pi’s), and miscellaneous devices. A technical team is dedicated to
+maintaining and managing the current IoT devices, network, and inventory while
+analyzing new IoT devices that can be purchased and included in our topology.
+
+The CICIoMT2024 comprises the use of several devices and multiple purposes. Fig.
+3 illustrates the devices used alongside the network segregation. The main goal
+of this topology is to simplify the process of capturing network traffic from
+different protocols while mimicking realistic operations. Also, devices are
+separated based on the protocol used to enable protocol-specific attacks to.
+
+تمام رزبری‌پای‌ها انک‌ها و بد افزار‌ها رو اجرا می‌کنن:
+
+An iPad acts as a remote controller for several devices across the network. This
+iPad and four Raspberry Pi’s are connected to an access point. In this case, the
+Raspberry Pi is a malicious device that launches all attacks. Then, this access
+point is connected to a Netgear switch, which gives access to the IoMT devices
+as well as to the Internet provider. This Internet connection is essential since
+many IoMT devices need to connect to remote servers.
