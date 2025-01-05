@@ -394,3 +394,31 @@ Raspberry Pi is a malicious device that launches all attacks. Then, this access
 point is connected to a Netgear switch, which gives access to the IoMT devices
 as well as to the Internet provider. This Internet connection is essential since
 many IoMT devices need to connect to remote servers.
+
+Access point connects all IoMT devices. First, 15 simulated devices are
+connected to the network using the MQTT protocol.  Table 2 lists all simulated
+devices and presents their IP addresses, time profiles, categories, and
+simulated value range. Second, 7 Wi-Fi devices are also connected to the
+CICIoMT2024 topology. Finally, 14 Bluetooth Low-Energy (BLE) devices are
+connected through a smartphone.
+
+Note: To enable the development of cybersecurity solutions, a benchmark dataset
+needs to mimic aspects of real IoMT deployments and operations.
+
+تمام شبیه‌سازی‌ها در برنامه IoTFlock انجام شده. در حقیقت یه تولید کننده ترافیکه
+
+Also the mqtt topology contains a local connection between a pc that hosts the
+iotflock vm and a ubuntu laptop running an mqtt broker.
+
+تست‌های در مورد بلوتوثشون مهمه:
+
+Given the criticality of the data BLE devices generate in the IoMT context, it
+is paramount that they are secured against potential attacks. However, BLE
+requires a particular approach to both execute attacks and capture the network
+traffic.
+
+برای انجام این کار یه تلفن هوشمند به دستگاه توسط بی‌ال‌ای متصل بوده. بعد یه
+سیستم بهش اتک میزنه و فعالیت‌های بد افزاری رو انجام میده.
+
+برای جست و جوی بلوتوث از کتابخونه bleak توی پایتون استفاده می‌کنن.
+
