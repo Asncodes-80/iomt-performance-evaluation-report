@@ -160,20 +160,7 @@ Existing benchmark datasets lack essential features for robust iomt security
 solutions, such as reduced number of real devices, a limited variety of attack,
 and a lack of extensive profiling.
 
-## Protocols
 
-+ Wi-Fi
-+ MQTT
-+ Bluetooth
-
-## As their goal
-
-1. Aiding researchers in creating secure heAlthcare systems using ML.
-2. Beyond simulating attacks, we capture the lifecycle of IoMT devices from
-network entry to exit through profiling, allowing classifiers to identify device
-anomalies.
-3. Their results as CICIoMT2024 release into CI dataset page, demonstrates that
-various methods can classify IoMT cyberattacks.
 
 ## Importance of IoMT
 
@@ -364,60 +351,141 @@ brute force, SlowITE, and MQTT publish flood attacks.
 NOTE: Moreover, other IoT security datasets are not necessarily focused on
 healthcare applications.
 
-Note from CIC IoT Lab:
+در کنار موارد بالا باید بنویسیم که این مقاله حاوی چه عملیاتی هستش:
 
-Establishing an IoT lab with several devices is difficult for many reasons. Such
-devices require supporting network devices (e.g., routers, access points, and
-switches) to connect and a team capable of setting up all the configurations
-needed. Furthermore, purchasing these devices at scale requires planning and
-financial investments that are not readily available. The Canadian Institute for
-Cybersecurity (CIC) has invested in establishing a well-equipped IoT lab. This
-investment comprises the acquisition of tens of IoT devices for multiple
-purposes (e.g., healthcare devices, home automation devices, and next-generation
-devices), several supporting network systems (e.g., routers, switches, access
-points, servers, adapters, sniffers, and networks taps), IoT kits (e.g., Arduino
-and Raspberry Pi’s), and miscellaneous devices. A technical team is dedicated to
-maintaining and managing the current IoT devices, network, and inventory while
-analyzing new IoT devices that can be purchased and included in our topology.
+## Proposed CICIoMT2024
 
-The CICIoMT2024 comprises the use of several devices and multiple purposes. Fig.
-3 illustrates the devices used alongside the network segregation. The main goal
-of this topology is to simplify the process of capturing network traffic from
-different protocols while mimicking realistic operations. Also, devices are
-separated based on the protocol used to enable protocol-specific attacks to.
+چه کار‌هایی در این مقاله انجام شده؟
 
-تمام رزبری‌پای‌ها انک‌ها و بد افزار‌ها رو اجرا می‌کنن:
+قسمت بسیار مهمی هستش که بخش‌های آزمایشات رو مورد بررسی قرار میده که چه
+ارزیابی‌هایی روی چه بخش‌هایی انجام شده؟
 
-An iPad acts as a remote controller for several devices across the network. This
-iPad and four Raspberry Pi’s are connected to an access point. In this case, the
-Raspberry Pi is a malicious device that launches all attacks. Then, this access
-point is connected to a Netgear switch, which gives access to the IoMT devices
-as well as to the Internet provider. This Internet connection is essential since
-many IoMT devices need to connect to remote servers.
+اینا اومدن یه دیتاستی از تمامی حملاتی که روی دستگاه‌های iomt میشد انجام داد رو
+تهیه کردن که از طریق اون بشه خوراک مناسب فرایند مدل‌های ML رو تهیه کرد و برای
+تحقیقات آینده بشه از طریق این دیتابیس به سیستم‌های iomt اتک زد یا حتی اتک‌هایی
+که زده میشه رو تشخیص داد. چون یسری علائم داره که از طریق اون علائم میشه وجود اتک
+در سیستم رو شناسایی کرد.
 
-Access point connects all IoMT devices. First, 15 simulated devices are
-connected to the network using the MQTT protocol.  Table 2 lists all simulated
-devices and presents their IP addresses, time profiles, categories, and
-simulated value range. Second, 7 Wi-Fi devices are also connected to the
-CICIoMT2024 topology. Finally, 14 Bluetooth Low-Energy (BLE) devices are
-connected through a smartphone.
+The main reason for the researchers to conduct this investigation was to address
+the limitations of existing datasets and networking data processing pipelines in
+the context of medical security, particularly for Internet of Medical Things
+(IoMT) devices. They aimed to propose a realistic benchmark dataset that would
+enable the development and evaluation of security solutions for healthcare
+systems. Additionally, the research sought to establish a complementary baseline
+to support further investigations and advancements in cybersecurity for IoMT
+operations.
 
-Note: To enable the development of cybersecurity solutions, a benchmark dataset
-needs to mimic aspects of real IoMT deployments and operations.
+دیتاست قدرتمندی که از این فرایند تحقیقاتی بدست آمده:
+
+http://205.174.165.80/IOTDataset/CIC_IOT_Dataset2023/Dataset/
+
+### As their goal
+
+1. Aiding researchers in creating secure Healthcare systems using ML.
+2. Beyond simulating attacks, we capture the lifecycle of IoMT devices from
+network entry to exit through profiling, allowing classifiers to identify device
+anomalies.
+3. Their results as CICIoMT2024 release into CI dataset page, demonstrates that
+various methods can classify IoMT cyberattacks.
+
+### Protocols
+
++ Wi-Fi
++ MQTT
++ Bluetooth
+
+از این بخش به بعد تمام آزمایشات انجام شده، توپولژی مورد استفاده، تولید ترافیک
+مخرب، و جنبه‌های پروفایلینگ دستگاه‌های iomt
+
+جزء دسته‌بندی Predictive model ها برای کشف حملات در داخل شبکه این سیستم‌های
+حیاتی استفاده می‌شود.
+
+## CIC IoT Lab
+
+در ابتدا محققان به دنبال یک آزمایشگاه IoT بودن که بتونن آزمایش‌های لازم رو انجام
+بدن. داشتن آزمایشگاهی با نیاز‌های اونا یه مقدار دشوار بود. این دستگاه‌ها نیازمند
+دستگاه‌های شبکه مثل روتر‌ها، اکسس پوینت‌ها و سویچ‌ها برای اتصال به شبکه و تیمی
+باید می‌بود که قادر به راه‌اندازی تمام کانفیگ‌های جمورد نظر بود. بعد از اون خرید
+این دستگاه‌ها به دلیل مقیاس بزرگ بودن و هزینه‌های متغیر نیازمند برنامه‌ریزی و
+سرمایه‌گذاری مالی بود که به راحتی در دسترس نبود براشون.
+
+موسسه کانادایی امنیت سایبری یا CIC اومد یک آزمایشگاه IoT برای اهداف این محققان
+ایجاد کرد که شامل ده‌ها دستگاه اینترنت اشیا برای اهداف متنوع مانند دستگاه‌های
+مراقبت از سلامت، دستگاه‌های خانه هوشمند و دستگاه‌های نسل بعدی را به همراه
+سیستم‌های شبکه مانند روتر‌ها سویچ‌ها، اکسس پوینت‌ها، سرور‌ها و غیره رو به همراه
+کیت‌های مانند Arduino و RPi رو کامل در اختیارشون گذاشت. یه تیم فنی متعهد به
+نگهداری و مدیریت دستگاه‌های Iot فعلی و تمام تجهیزات شبکه را بهشون داد که بتونن
+به سرعت نیازمندی که دارن رو رفع کنن و وارد فاز عملیاتی تحقیقشون بشن.
+
+تو اون شکلی که توی دایرکتوری images هست میشه تجهیزاتی که بهشون دادن رو به تصویر
+کشید.
+
+## IoMT Topology
+
+توپولوژی‌ای که برای انجام آزمایشات خود راه‌اندازی کردن شامل المان‌ها زیر بوده:
+
+یک آیپد به عنوان remote controller
+
+۴ تا RPi که تمام حملات از طریق اونا انجام میشه.
+
+دستگاه‌های IoMT به از طریق یک اکسس پوینت متصل به شبکه هستند که اجازه میده این
+دستگاه‌ها به اینترنت دسترسی داشته باشن از اون سمت هم اکسس پوینته به یه سویئچ
+Netgear متصل هستش.
+
+توی این توپولوژی تمام نود‌ها رو با پروتوکل مناسب شبیه‌سازی کردن:
+
++ ۱۵ تا نودی که با پروتوکل mqtt کار میکنن
++ ۷ تا دستگاهی که با WiFi کار می‌کنن
++ و ۱۴ دستگاهی که با بلوتوث از نوع کم مصرف کار می‌کنن
+
+## Generation of malicious traffic
+
+تولید ترافیک مخرب شامل اجرای حملات مختلف روی دستگاه‌های iomt هستش که برای تولید
+بنچ مارک دیتاست نسبت به سناریو‌های پروژه‌های واقعی در دنیای دیجیتال هستش.
+
+محققان چندین نوع از حملات رو انجام دادن:
+
++ DoS
++ DDoS
++ ARP spoofing
++ Flooding campaigns (ICMP, SYN, TCP, and UDP floods) در دستگاه‌هایی که با WiFi
+کار می‌کردند.
+
+هدف این فرایند ثبت ویژگی‌های ترافیک بدخیم و خراب‌کننده جهت تسهیل توسعه
+راه‌حل‌های امنیت سایبری برای محیط‌های IoMT بود.
 
 تمام شبیه‌سازی‌ها در برنامه IoTFlock انجام شده. در حقیقت یه تولید کننده ترافیکه
 
-Also the mqtt topology contains a local connection between a pc that hosts the
-iotflock vm and a ubuntu laptop running an mqtt broker.
+### WiFi
 
-تست‌های در مورد بلوتوثشون مهمه:
+برای ایجاد ترافیک در پروتکل ارتباطی wifi محققان حملات ARP Spoofing برای Man in
+the Middle اتک و بسیاری از حملات ICMP, CYN, TCP, و UDP رو انجام دادن که همه در
+دسته‌بندی DoS و DDoS قرار دارند.
 
-Given the criticality of the data BLE devices generate in the IoMT context, it
-is paramount that they are secured against potential attacks. However, BLE
-requires a particular approach to both execute attacks and capture the network
-traffic.
+### MQTT
 
+در طی این حملات.
 
+در این پروتکل ارتباطی سه تا حمله انجام شد:
+
++ MQTT Connect Flood: در این حمله درخواست اتصال به بروکر با شدت زیاد ارسال می‌شود.
++ MQTT Publish Flood: ارسال بسته‌های مختلف به تاپیک‌های مختلف و رندوم mqtt
++ MQTT Malformed Data attack: شامل ارسال داده‌های نادرست به بروکر برای تجزیه و
+  تحلیل رفتار و جمع‌آوری اطلاعات تاپیک‌های می‌شود.
+
+در حمله آخر از ابزار MQTTSA استفاده شد و سعی در sniff و شنود بروکر با ارسال
+بسته‌های مشخص داشتند تا رفتار دستگاه‌ها را بررسی کنند. در این فرایند حمله،
+حمله‌کننده نام تمام تاپیک‌های mQTT که به صورت نهایی منتشر شده‌اند رو بدست میاره
+و سعی میکنه که به هر تاپیک داده نادرستی رو ارسال بکنه.
+
+هدف اصلی از این حملات بررسی و ارزیابی آسیب‌پذیری دستگاه‌های IoMT در پروتکل MQTT
+می‌باشد.
+
+شبیه‌ساز از طریق VMware image که یه سیستم عامل لینوکس ubuntu نسخه ۱۸.۰۴.۶ LTS
+بوده. و شبیه ساز IoTFlock از نوع GUI رو که با C++ نوشته شده بوده مورد استفاده
+قرار دادن.
+
+### Bluetooth attacks
 
 چگونگی انجام اتک‌ها در سیستم‌های مبتنی بر بلوتوث کم مصرف:
 
@@ -492,7 +560,8 @@ Livlov Heart Rate sensor: این نوع از سنسور ضربان قلب برا
 خارج بشه دیگه اون نرم‌افزاره که دیگه نمیتونه کارشو بکنه پس عملاً اختلال تو سیستم
 ایجاد کردن.
 
-دستگاه Wellue O2 Ring: این دستگاه قشنگ به عملیات خودش ادامه میشه بدون وقفه در هنگام اتک‌ها
+دستگاه Wellue O2 Ring: این دستگاه قشنگ به عملیات خودش ادامه میشه بدون وقفه در
+هنگام اتک‌ها
 
 دستگاه Lookee O2 Ring: این دستگاه نسبت به اتک اونا آسیب‌پذیر بوده. در طی اجرا
 دستگاه کاملاً دچار اضطراب و overwhelmed شده و خاموش شد.
@@ -505,4 +574,129 @@ Livlov Heart Rate sensor: این نوع از سنسور ضربان قلب برا
 
 دستگاه SleepU Sleep Oxygen Monitor: در برابر حملاتی که انجام شده کاملاً مقاومت داشته.
 
-Rhythm+2.0 (Scosche): 
+Rhythm+2.0 (Scosche): کاملاً تحت تاثیر حمله قرار گرفت به طوری که دستگاه کاملاً
+در شرایط اضطراب قرار گرفت و خاموش شد.
+
+دستگاه Wellue Pulsebit EX: این دستگاه در مقابل حملات مقاومت کرد و به عملیات خودش
+بدون قطعی ادامه داد.
+
+Checkme O2 Smart Pulse Oximeter: این دستگاه نسبت به حملاتی که انجام شد مقاومت
+داشت و به عملیات استاندارد خودش ادامه داد.
+
+دستگاه Kinsa Thermometer: کاملاً تحت تاثیر حمله قرار گرفت و رفتار متفاوتی داشت.
+در هنگام حمله دستگاه قادر به ریست کردن connection با خاموش کردن دماسنج نبود.
+تنها راه ریست کردن connection خالی کردن باطری بود.
+
+NOTE:
+
+لازم به ذکر است که تمام حملات صورت گرفته کاملاً در محیطی ایزوله از هر گونه
+سیگنال خارجی بود که ممکن است با ترافیک شبکه جمع‌آوری شده تداخله داشته باشد.
+
+## IoMT profiling
+
+درک کامل رفتار جنبه‌های مختلف عملیاتی که دستگاه‌های IoMT انجام میدن بسیار حیاتیه
+برای بهبود امنیت سیستم. ارزیابی پروفایل‌های IoMT قابلیت کلاسیفایر‌ها رو برای
+تشخیص ناهنجاری‌ها در عملیات دستگاه‌های Healthcare را با مشخص کردن رفتار وخیم یا
+عادی شبکه بهبود می‌بخشد. در تسک‌هاتی کلاسیفای نشده، الگو‌های دیده نشده ممکن است
+فعالیت‌های مخرب و حملات zero-day را نشان دهند.
+
+حمله zero-day به نوعی حمله سایبری اشاره دارد که یک آسیب‌پذیری نا شناخته یا
+به‌تازگی کشف شده در نرم‌افزار، سخت‌افزار یا سیستم استفاده می‌کند.
+
+به این خاطر اسم آن را zero day attack گذاشتن که توسعه‌دهنده یا مالک سیستم هیچ
+زمانی برای شناسایی و رفع آسیب‌پذیری قبل از وقوع حملات نگذاشته است.
+
+در این تحقیق تمامی حملات مورد نظر انجام شده است که توسعه‌دهندگان و شرکت‌ها با
+توجه به این حملات هیچ وقت گرفتار zero-day attack نشوند.
+
+ویژگی‌های اصلی حملات
+[zero-day](https://en.wikipedia.org/wiki/Zero-day_vulnerability): 
+
++ آسیب‌پذیری ناشناخته: آسیهب‌پذیری که هنوز توسط تیم امنیتی یا تیم توسعه کشف یا
+  رفع نشده است.
++ غافلگیری: به دلیل عهدم آگاهی از آسیب‌پذیری، سیستم‌ها در برابر این نوع حملات
+  کامل آسیب‌پذیر هستند.
++ سوء‌استفاده یا Exploit: مهاجمان معمولاً از کد یا تکنیک‌هایی برای بهره‌برداری
+  از آسیب‌پذیری استفاده می‌کنند.
+
+### Power experiments
+
+در این قسمت آزمایشات برای مصرف انرژی دستگاه‌های مجهز به Wi-Fi مورد بررسی قرار
+گرفته. این آزمایش تلاش می‌کند تا رتفار دستگاه‌های wi-fi را از نظر مصرف انرژی و
+ارسال داده‌ها در هنگام روشن و خاموش بودن را به دقت تحلیل کند. این آزمایش تنها
+روی هفت دستگاه که Wi-Fi هستند تمرکز دارد و دستگاه‌های MQTT شبیه‌سازی نشده‌اند.
+برای انجام این آزمایش:
+
+تمام دستگاه‌ها از شبکه خارج شده‌اند و به جایی متصل نیستند.  تنها دستگاه متصل به
+شبکه یک دستگاه آیپد است که برای کنترل و نظارت بر سایر دستگاه‌ها استفاده می‌شود.
+حتی دستگاه‌های RPi نیز در شبکه نیستند.
+
+مراحل زیر به صورت کلی انجام شده:
+
+در مرحله اول دستگاه مورد نظر روشن شد و رفتار آن برای مدت ۲ دقیقه با استفاده از
+فیلتر آدرس MAC ثبت شد.
+
+در مرحله دوم، پس از این مدت دستگاه خاموش می‌شود و فرایند ثبت داده‌ها برای ۳
+دقیقه دیگر ادامه پیدا می‌کند تا هر بسته اطلاعاتی باقیمانده شناسایی شود یا
+اطمینان حاصل شود که دیگر هیچ بسته‌ای از دستگاه ارسال نمی‌شود.
+
+فرایند انجام شده دقیقاً همانند فرایندی است که در بدست آوردن دیتاست CICIoT2021
+انجام شده بود. نکته قابل توجه آن است که برخی از دستگاه‌ها کلید روشن/خاموش
+نداشتند و برای انجام آزمایشات نیاز به انجام تنظیماتی داشتند:
+
++ Singcall Sensor
++ SOS Multifunctional Page
++ Sense U Baby
+
+### Idle experiments
+
+آزمایشاتی است که تنها در زمان روشن بودن دستگاه ولی در حالی که هیچ داده‌ای منتقل
+نمی‌کردن، انجام می‌شود. انجام این آزمایش به محققان اجازه داد که رفتار حالت عادی
+و baseline شبکه رو بهتر متوجه بشن. در این آزمایش ۱۳ ساعت عملیات بررسی و آزمایش
+طول کشید. آزمایشات بین دو شب از ساعت ۶ عصر تا تا ۷ صبح برای اطمینان از اینکه هیچ
+تعاملی دستگاه‌ها ندارند انجام شد.
+
+### Active experiments
+
+شامل دستگاه‌هایی می‌شود که وظایف موردنظر خود را انجام می‌دادند و ترافیک عادی را
+در شبکه بابت عملیات خود ایجاد می‌کردند.
+
+### Interaction experiments
+
+این قسمت از آزمایشات روی تعامل با دستگاه‌ها متمرکز است که به صورت انجام شده:
+
++ فیزیکی: کاربر مستقیماً با دستگاه ارتباط برقرار می‌کند.
++ دیجیتالی: برنامه‌ها با یکدیگر ارتباط می‌گیرند و ارسال داده را انجام می‌دهند.
+
+سه نوع تعامل بررسی شده است:
+
+تعامل فیزیکی:
+
++ این آزمایش‌ها زمانی انجام شده که دستگاهن دارای دکمه‌های فیزیکی بوده
++ آزمایش‌ها با ترکیب تعامل فیزیکی و شبکه‌های محلی یا شبکه‌های گسترده صورت گرفته:
+  + در شبکه لوکال: اپلیکیشن و دستگاه در یک شبکه قرار داشتند.
+  + در شبکه WAN: اپلیکیشن از شبکه‌ای متفاوت نسبت به دستگاه متصل بوده.
+
+تعامل در شبکه محلی:
+
+در این آزمایش‌ها از اپلیکشن‌های همراه دستگاه استفاه شده است. اپلیکیشن و دستگاه
+هر دو در یک شبکه با استفاده از WiFi بوده‌اند. برای مثال روشن و خاموش کردن دستگاه
+از طریق اپلیکیشن در خانه.
+
+در تعامل با شبکه گسترده هم همینطور بوده، اپلیکیشن همراه دستگاه به شبکه‌ای متفاوت
+متصل بوده و کنترل دستگاه از راه دور مثلا روشن کردن دستگاه خانه از دفتر کار صورت
+گرفته بود.
+
+## Machine Learning Evaluation
+
+آزمایشاتی که انجام شده آنقدر باعث تولید دیتا شده که میشه ارزیابی‌هایی رو برای
+تشخیص حمله در سیستم‌های IoMT مورد استفاده قرار داد. از جمله این مدل‌های یادگیری
+ماشینی هستند که می‌توانند در این بین مورد استفاده قرار بگیرند:
+
++ Logistic Regression
++ Random Forest
++ Adaboost
++ Deep Neural Network (DNN)
+
+کلاسیفای کردنشون به صورت وخیم بودن و حمله، دسته‌بندی نوع حمله، حمله وخیم،
+اسپوفینگ، recon، MQTT، DoS و DDoS.
