@@ -1,0 +1,74 @@
+@startmindmap iot_categories
++ IoT
+++ Application Domain:
++++ Smart home
++++ Smart city
++++ Smart and digital healthcare
++++ Smart agriculture and smart farm
++++ Env monitoring
++++ RESTful
++++ Software architecture
+++ Middleware Domain: 
++++ Fog and Cloud platforms: 
+++++ OpenIoT
+++++ Amazon
+++++ Google Cloud
+++++ Libellium
+++++ IBM Watson
+++++ FIWARE
+++++ Arkessa
+++++ OnePlatform
+++++ SensorCloud
+++++ SmartThings
+++++ Oracle IoT
+++++ Nimbits
+++++ Xivelym
++++ Data processing mechanism
+++++ Data mining
+++++ Big query
+++++ Cloud Datalab
+++++ Apache Hadoop
+++++ Kafka
+++++ Storm
+++++ RapidMQ
+++++ SPARQL
++++ Data Storage
+++++ Storage infrastructure (public, private, hybrid)
+++++ DB (MongoDB, Cassandra, Haddop, HBase, CouchDB, Redis)
+++ Networking Domain
++++ Communication protocols
+++++ Application (CoAP, MQTT, AMQP, DDS, WebSocket, XMPP)
+++++ Transport (TCP, UDP)
+++++ Network (IPv4, IPv6)
+++++ Routing (RPL),
+++++ Service discovery (mDNS, DNS-SD, SSD, SLP)
++++ Adoption mechanisms
+++++ Adoption layer (6LoWPAN, 6TiSCH)
+++++ Connectivity interfaces (RJ45, ODB2, RS-232, RS-485, PLC, Modbus, SPI, I2C, USB)
+++++ Gateways (Advantech, ADLINK, BRC)
+++ Devices Domain
++++ Hardware platform
+++++ Arduino
+++++ Raspery Pi
+++++ Intel Galileo Gen
+++++ Intel Edison
+++++ Beaglebone Black
+++++ Broadcom
+++++ Netduino
+++++ Flutter
+++++ Marvell
+++++ Particle.io
++++ Embedded objects
+++++ Embedded sensor
+++++ Actuators
+++++ RFID/NFC tags
+++++ Touch screen display
+++++ Firmware
+++++ onboard software
+++++ Identification (EPC, uCode, QR)
++++ Mechanical & Electrical parts
+++++ Mechanical and electrical parts (e.g., batteries)
+++++ Processing units (e.g., Microcontrollers, Microprocessors)
+++++ Digital Signal Processors (DSP)
+++++ Peripheral Controller Chips
+@endmindmap

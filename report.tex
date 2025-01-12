@@ -25,12 +25,15 @@
 
 \begin{document}
 \maketitle
-\tableofcontents
 
 \section*{مجوز}
 
 به فایل license همراه این برگه توجه کنید. این برگه تحت مجوز GPLv3 منتشر شده است
 که اجازه نشر و استفاده (کد و خروجی/pdf) را رایگان می‌دهد.
+
+\tableofcontents
+\listoffigures
+\listoftables
 
 مهم‌ترین انگیزه برای توسعه این تحقیق وجود کمبود در داده‌های موجود ارزیابی کارایی
 تجهیزات اینترنت اشیا پزشکی و پیشرفت امنیتی تمام شبکه‌هایی که در خصوص جریان‌های
@@ -88,9 +91,37 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\textwidth]{./figures/iot_categories.pdf}
-  \caption{دسته‌بندی سیستم‌های \lr{IoT}}
-  \label{fig:iotCategories}
+  \includegraphics[width=0.6\textwidth]{./figures/IoT_overall_domains.pdf}
+  \caption{۴ دسته‌بندی دامنه استفاده از سیستم‌های \lr{IoT}}
+  \label{fig:iotOverallDomains}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./figures/IoT_application_domains.pdf}
+  \caption{حوزه‌های تخصصی بخش اپلیکیشن در \lr{IoT}}
+  \label{fig:iotApplicationDomains}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./figures/IoT_middleware_domains.pdf}
+  \caption{حوزه‌های بخش میان‌افزار در \lr{IoT}}
+  \label{fig:iotMiddlewareDomains}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./figures/IoT_network_domains.pdf}
+  \caption{حوزه‌های بخش شبکه در \lr{IoT}}
+  \label{fig:iotNetworkingDomains}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{./figures/IoT_devices_domains.pdf}
+  \caption{حوزه‌های بخش \lr{Embedded} در \lr{IoT}}
+  \label{fig:iotDevicesDomains}
 \end{figure}
 
 عمومیت جریان داده در سیستم‌های IoT:
@@ -376,7 +407,41 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
     نمایش، کارت گرافیک و غیره.
 \end{itemize}
 
+در یکی از کار‌ها \cite{huang2012close} مدلی برای مصرف انرژی نسبت به انتقال و جا
+به جایی داده‌ها مطرح شده که سطوح مختلف مصرف باتری را برای \lr{uplink} و
+\lr{downlink} شامل می‌شود:
 
+\begin{equation}
+    P_{tx} = p_{u}\tau_{u} + \beta
+\end{equation}
+
+\begin{equation}
+    P_{rx} = p_d \tau_{u} + \beta
+\end{equation}
+
+گذردهی \lr{uplink}، $\tau_u$ می‌باشد و گذردهی \lr{downlink}، $\tau_d$ است. در
+حالی که $p_u$ و $p_d$ میزان انرژی مورد نیاز برای انتقال داده‌ها در \lr{uplink} و
+\lr{downlink} می‌باشد. ثابت $\beta$ میزان مصرف انرژی در حالت \lr{idle} می‌باشد.
+این مقادیر کاملاً به تکنولوژی ارتباطی، پروتکل‌ها و دستگاه‌هایی که روی آن برنامه
+مستقر شده است وابسته می‌‌باشد. برای انتقال همزمان \lr{uplink} و \lr{downlink}
+سطح انرژی می‌تواند با فرمول زیر محاسبه شود:
+
+\begin{equation}
+    P_{trx} = p_u\tau_u + p_d\tau_d + \beta
+\end{equation}
+
+نسبت معادله \lr{uplink} بر روی \lr{downlink} به همراه پهنای باند، می‌تواند فرمول
+را برای محاسبه انرژی بهینه شبکه برای انتقال یک مقدار داده معین (\lr{energy per
+bit}). مقدار انرژی مورد نیاز برای ارسال از طریق فرمول $E(D)_{rx}$ میزان انرژی
+مورد نیاز برای دریافت داده‌ها از طریق فرمول $E(D)_{rx}$ حاصل می‌شود.
+
+\begin{equation}
+    E(D)_{tx} = p_u + \beta\tau^{-1}_u
+\end{equation}
+
+\begin{equation}
+    E(D)_{rx} = p_d + \beta\tau^{-1}_d
+\end{equation}
 
 یکی از مهم‌ترین چالش‌های دستگاه‌های \lr{IoT} مربوط به مصرف باتری آن‌ها می‌باشد.
 در بعضی مواقع دستگاه‌های \lr{IoT} از باتری‌هایی استفاده می‌کنند که شرایط جایگزین
