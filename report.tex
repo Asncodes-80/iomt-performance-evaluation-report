@@ -160,9 +160,9 @@
 
 نرخ داده‌ها می‌تواند از طریق فرمول شانون محاسبه شود.
 
-\begin{equation}
+\equate{
     D_{rate} = B_{i,j} \log_{2} (1 + \frac{\lvert h_{ij} \rvert ^{2} . P_{tx}}{P_{Nj}}) 
-\end{equation}
+}
 
 \begin{itemize}
     \item $B_{ij}$: پهنای باند
@@ -179,9 +179,9 @@
 
 مجموع بار سیستم از طریق فرمول زیر بدست می‌آید:
 
-\begin{equation}
+\equate{
     D = \sum_{k = 1}^{N} D_{rate, k} \times T_{w, k}
-\end{equation}
+}
 
 \begin{itemize}
     \item $D_{rate, k}$: نرخ تولید داده توسط دستگاه \lr{IoT}
@@ -219,9 +219,9 @@
 
 تاخیر سرویس‌دهی:
 
-\begin{equation}
+\equate{
     T_{exe.} = T_{cm} + T_{cp}
-\end{equation}
+}
 
 \begin{itemize}
     \item $T_{cm}$: مدت زمان تاخیر در ارتباطات
@@ -233,9 +233,9 @@
 
 برای کاهش \lr{service latency} از فرمول زیر بایستی پیروی کند:
 
-\begin{equation}
+\equate{
     Objective: \min (T_{exe.}) = T_{cm} + T_{cp} \leq T_{req}
-\end{equation}
+}
 
 موقعی که داری در مورد \lr{Execution time} می‌نویسی فرمول \lr{communication
 latency} رو باید داشته باشی که بگی از کجا بدست میاد. و همچنین فرمول
@@ -244,9 +244,9 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 
 \subsubsection{زمان ارتباطی}
 
-\begin{equation}
+\equate{
     T_{cm} = \sum_{i=1}^{N} (d_{proc} + d_{queue} + d_{trans} + d_{prop})
-\end{equation}
+}    
 
 \begin{itemize}
     \item $d_{prop}$: تاخیر پردازشی
@@ -258,9 +258,9 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 تاخیر مربوط به \lr{Propagation} مجموع زمان مورد نیاز برای داده جهت ارسال از منبع
 به مقصد که مبتنی بر طول لینک فیزیکی و سرعت رسانا می‌باشد.
 
-\begin{equation}
+\equate{
     d_{trans} = \frac{P_s}{R_L}
-\end{equation}
+}
 
 که در آن:
 
@@ -269,9 +269,9 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
     \item $R_L$: سرعت لینک ارتباطی \texttt{bps}
 \end{itemize}
 
-\begin{equation}
+\equate{
     d_{prop} = \frac{l_{ij}}{c}
-\end{equation}
+}
 
 \begin{itemize}
     \item $l_ij$: لینک فیزیکی
@@ -280,9 +280,9 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 
 \subsubsection{زمان پردازشی}
 
-\begin{equation}
+\equate{
     T_{cp} = T_L + \sum_{i=1}^{k} t_{offi}
-\end{equation}
+}
 
 که در آن:
 
@@ -295,13 +295,10 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 
 به بیان دیگر می‌توان آن را به صورت مدل زیر محاسبه کرد:
 
-\begin{equation}
-    T_{cp} = t_L + t_F + t_C
-\end{equation}
-
-\begin{equation}
+\equate{
+    T_{cp} = t_L + t_F + t_C \\
     T_{cp} = t_L + \max_{i=1, \ldots, k} t_{F_i} + \max_{j=1, \ldots, n} t_{C_i}
-\end{equation}
+}
 
 که در آن:
 
@@ -319,9 +316,9 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 
 برای بدست آوردن زمان پردازش در هر زیر سیستم از فرمول زیر استفاده می‌شود:
 
-\begin{equation}
+\equate{
     t_{pi} = \frac{I_{CC_i}}{f_{cpu, i}}
-\end{equation}
+}
 
 \begin{itemize}
     \item $t_{pi}$: زمان پردازشی در زیر سیستم $i$
@@ -329,9 +326,9 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
     \item $f_{cpu, i}$: نرخ کلاک (فرکانس کاری \lr{CPU}) زیر سیستم $i$
 \end{itemize}
 
-\begin{equation}
+\equate{
     t_{Pi} = t_{CPU_i} + t_{I/O_i}
-\end{equation}
+}
 
 \subsubsection{تابع محاسبه \lr{CPU time}}
 
@@ -346,9 +343,9 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 می‌گیرد و هیچ محاسبه جانبی مانند مدت زمان \lr{I/O} و مدت زمان اجرای دیگر
 برنامه‌ها در نظر گرفته نمی‌شود.
 
-\begin{equation}
+\equate{
     t_{cpu_i} = \frac{I_{CC_i}}{f_{cpu_i}} + t_{OS} = I_{CC_i} \times t_{cc_i} + t_{OS}
-\end{equation}
+}
 
 حاصل این تابع معمولاً بسیار کوچک است و می‌تواند نادیده گرفته شود زیرا به سمت صفر
 میل می‌کند ($t_{OS} \rightarrow 0$). به همین خاطر بیشتر روی \lr{User CPU time}
@@ -365,15 +362,15 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 که هر دستورالعمل به آن نیاز دارد. اگر $I_{app_j}$ تعداد دستورالعمل‌ها برای یک
 برنامه باشد آن وقت $I_{CC_i}$ از طریق معادله زیر بدست می‌آید.
 
-\begin{equation}
+\equate{
     I_{CC_i} = \sum_{j=1}^{k} I_{app_j} \times CPI_{j}
-\end{equation}
+}
 
 \subsubsection{زمان پردازش محلی با توجه به اندازه داده \lr{(D)}}
 
-\begin{equation}
+\equate{
     I_{CC_i} = X \times D
-\end{equation}
+}
 
 \begin{itemize}
     \item $D$: اندازه ورودی داده بر حسب بیت
@@ -382,9 +379,9 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 
 بنابراین خواهیم داشت:
 
-\begin{equation}
+\equate{
     t_{pi} = \frac{\beta_i \times D \times X}{f_{cpu, i}}
-\end{equation}
+}
 
 که در آن $\beta_{i}$ درصد داده‌‌ای است که در سیستم $i$ پردازش می‌شود.
 
@@ -395,9 +392,9 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 برای محاسبه مصرف کل انرژی در سیستم‌های \lr{IoT} می‌توان از فرمول زیر استفاده
 کرد:
 
-\begin{equation}
+\equate{
     E_{dev} = F(E_{cp}, E_{cm}, E_{idle}, E_{other})
-\end{equation}
+}
 
 \begin{itemize}
     \item $E_{cp}$: انرژی مصرف شده طی محاسبات
@@ -411,13 +408,10 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 به جایی داده‌ها مطرح شده که سطوح مختلف مصرف باتری را برای \lr{uplink} و
 \lr{downlink} شامل می‌شود:
 
-\begin{equation}
-    P_{tx} = p_{u}\tau_{u} + \beta
-\end{equation}
-
-\begin{equation}
+\equate{
+    P_{tx} = p_{u}\tau_{u} + \beta \\
     P_{rx} = p_d \tau_{u} + \beta
-\end{equation}
+}
 
 گذردهی \lr{uplink}، $\tau_u$ می‌باشد و گذردهی \lr{downlink}، $\tau_d$ است. در
 حالی که $p_u$ و $p_d$ میزان انرژی مورد نیاز برای انتقال داده‌ها در \lr{uplink} و
@@ -426,22 +420,29 @@ latency} رو باید داشته باشی که بگی از کجا بدست می
 مستقر شده است وابسته می‌‌باشد. برای انتقال همزمان \lr{uplink} و \lr{downlink}
 سطح انرژی می‌تواند با فرمول زیر محاسبه شود:
 
-\begin{equation}
+\equate{
     P_{trx} = p_u\tau_u + p_d\tau_d + \beta
-\end{equation}
+}
 
 نسبت معادله \lr{uplink} بر روی \lr{downlink} به همراه پهنای باند، می‌تواند فرمول
 را برای محاسبه انرژی بهینه شبکه برای انتقال یک مقدار داده معین (\lr{energy per
 bit}). مقدار انرژی مورد نیاز برای ارسال از طریق فرمول $E(D)_{rx}$ میزان انرژی
 مورد نیاز برای دریافت داده‌ها از طریق فرمول $E(D)_{rx}$ حاصل می‌شود.
 
-\begin{equation}
-    E(D)_{tx} = p_u + \beta\tau^{-1}_u
-\end{equation}
-
-\begin{equation}
+\equate{
+    E(D)_{tx} = p_u + \beta\tau^{-1}_u \\
     E(D)_{rx} = p_d + \beta\tau^{-1}_d
-\end{equation}
+}
+
+مقدار داده‌هایی که بر واحد بیت توسط دستگاه‌های \lr{IoT} ارسال و دریافت می‌شوند
+به ترتیب $D_{tx}$ و $D_{rx}$ می‌باشند. با در نظر گرفتن محاسبات پیشین، می‌توان در
+نهایت میزان مصرف انرژی توسط دستگاه‌های \lr{IoT} را به شکل زیر بدست آورد:
+
+\equate{
+    E_{dev} = (P_L \times t_L) + (P_{tx} \times t_{tx}) + (P_{rx} \times t_{rx}) + (P_{id} \times t_{off}) \\
+    E_{dev} = (P_L \times t_L) + ((p_u\tau_u + \beta) \times t_{tx}) + ((p_d\tau_d + \beta) \times t_{rx}) + (P_{id} \times t_{off}) \\
+    E_{dev} = (P_L \times t_L) + ((p_u + \beta\tau^{-1}_{u}) \times D_{tx}) + ((p_d + \beta\tau^{-1}_{d}) \times D_{rx}) + (P_{id} \times t_{off})
+}
 
 یکی از مهم‌ترین چالش‌های دستگاه‌های \lr{IoT} مربوط به مصرف باتری آن‌ها می‌باشد.
 در بعضی مواقع دستگاه‌های \lr{IoT} از باتری‌هایی استفاده می‌کنند که شرایط جایگزین
@@ -450,9 +451,9 @@ bit}). مقدار انرژی مورد نیاز برای ارسال از طریق
 زمان کاهش پیدا می‌کند. به همین ترتیب انرژی باقی‌مانده $E_{dev}(r)$ یا مدت زمانی
 که سیستم می‌تواند روشن بماند از طریق فرمول زیر بدست می‌آید.
 
-\begin{equation}
+\equate{
     E_{dev}(r) = E_{dev}(i) - E_{dev}(t)
-\end{equation}
+}
 
 \begin{itemize}
     \item $E_{dev}(i)$: مقدار اولیه انرژی دستگاه
@@ -463,9 +464,9 @@ bit}). مقدار انرژی مورد نیاز برای ارسال از طریق
 وابسته به قدرت مورد نیاز برای پردازش‌های داخلی $P_{cp}$ انتقال داده‌ها $P_{cm}$
 و بقیه فرایند‌ها $P_{other}$ می‌باشد.
 
-\begin{equation}
+\equate{
     T(sys) = \frac{E_{dev}(r)}{P_{cp} + P_{cm} + P_{other}}
-\end{equation}
+}
 
 یکی دیگر از چالش‌های دستگاه‌های \lr{IoT} مربوط به منبع‌تغذیه آن‌ها می‌باشد. در
 مواقعی که دستگاه‌های \lr{IoT} از باتری استفاده می‌کنند و به دلیل محیط‌های مختلف
